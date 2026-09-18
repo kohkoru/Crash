@@ -1,11 +1,7 @@
-using System.Collections;
-using Unity.VectorGraphics;
-using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
-using UnityEngine Events;
-using UnityEngine SceneManagement;
-using System.Collentions;
+using System.Collections;
 
 public class SceneController : MonoBehaviour
 {
@@ -26,7 +22,7 @@ public class SceneController : MonoBehaviour
     private IEnumerator LoadSceneWithFade(string sceneName)
     {
         fade.Play(fadeOutAnimationName, 0, 0f);
-        yield return WaitForSeconds(1f);
+        yield return new WaitForSeconds(1f);
         SceneManager.LoadScene(sceneName);
     }
 }
