@@ -26,6 +26,7 @@ public class MovementController : MonoBehaviour
     private void RotateTowards(Vector3 Direction)
     {
         Quaternion targetRotation = Quaternion.LookRotation(Direction);
-        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+        characterController.transform.rotation = Quaternion.Slerp(transform.rotation,
+            targetRotation, rotationSpeed * Time.deltaTime);
     }
 }
