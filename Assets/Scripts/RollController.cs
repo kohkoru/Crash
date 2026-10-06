@@ -7,12 +7,14 @@ public class RollController : MonoBehaviour
     private InputController inputController;
     [SerializeField]
     private UnityEvent onRoll;
+    [SerializeField]
     private float rollDuration = 1f;
     [SerializeField]
     private GameObject rollEffectPrefab;
     [SerializeField]
     private float effectOffsetY = 0.5f;
     private bool isRolling = false;
+    public bool IsRolling => isRolling;
     private void Update()
     {
         if (!isRolling && inputController.Roll)
