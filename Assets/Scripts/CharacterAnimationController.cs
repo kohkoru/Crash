@@ -28,6 +28,7 @@ public class CharacterAnimationController : MonoBehaviour
     }
     private void Update()
     {
+        if (!isActive) return;
         bool isGrounded = characterController.isGrounded;
         if (isRolling)
         {
@@ -41,7 +42,7 @@ public class CharacterAnimationController : MonoBehaviour
             isLanding = true;
             PlayAnimation(animationConfiguration.landAnimationName);
         }
-        if (isLanding)
+        else if (isLanding)
         {
             if (IsAnimationFinished(animationConfiguration.landAnimationName))
             {

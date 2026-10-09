@@ -16,7 +16,6 @@ public class Pool : MonoBehaviour
         if (poolStack.Count > 0)
         {
             currentObject = poolStack.Pop();
-            currentObject.transform.position = position;
             currentObject.SetActive(true);
         }
         else
@@ -24,6 +23,7 @@ public class Pool : MonoBehaviour
             currentObject = Instantiate(prefab);
             currentObject.AddComponent<PoolObject>().Pool = this;
         }
+        currentObject.transform.position = position;
         activeObjects.Add(currentObject);
     }
     public void instantiateObject(Transform parent)
