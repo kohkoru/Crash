@@ -83,7 +83,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b228f48311028d4e854b4091c455a7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Coin
-  coinValue: 1
+  coinValue: 2
   coinEffectPrefab: {fileID: 2789236419757079250, guid: fcda914ad4043d04f9d66a2ef68e8225, type: 3}
 --- !u!1001 &5860878741766423621
 PrefabInstance:

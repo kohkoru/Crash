@@ -4,7 +4,6 @@ using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
-    public static GameController Instance { get; private set; }
     [SerializeField]
     private CoinsController coinsController;
     [SerializeField]
@@ -16,17 +15,6 @@ public class GameController : MonoBehaviour
     private void start()
     {
         StartGame();
-    }
-    private void Awake()
-    {
-        if (Instance == null)
-        {
-            Instance = this;
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
     }
 
     public void StartGame()
