@@ -29,4 +29,8 @@ public class MovementController : MonoBehaviour
         characterController.transform.rotation = Quaternion.Slerp(transform.rotation,
             targetRotation, rotationSpeed * Time.deltaTime);
     }
+    private void StopMovement()
+    {
+        characterController.Move(Vector3.zero);
+    }
 }
