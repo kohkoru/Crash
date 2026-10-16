@@ -26,7 +26,7 @@ public class Pool : MonoBehaviour
         {
             currentObject = Instantiate(prefab);
             currentObject.AddComponent<PoolObject>().Pool = this;
-            if (!isTurnedOff)
+            if (isTurnedOff)
             {
                 currentObject.SetActive(false);
             }

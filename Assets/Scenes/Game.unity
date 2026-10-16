@@ -155,6 +155,194 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2102852626}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &36967735
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 36967737}
+  - component: {fileID: 36967736}
+  m_Layer: 0
+  m_Name: PlayerStates
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &36967736
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 36967735}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee50f90a6f4329a43969f220e383a09c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerStates
+  onInitialize:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 964455247}
+        m_TargetAssemblyTypeName: InputController, Assembly-CSharp
+        m_MethodName: set_IsActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 75301023}
+        m_TargetAssemblyTypeName: CharacterAnimationController, Assembly-CSharp
+        m_MethodName: set_IsActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 75301022}
+        m_TargetAssemblyTypeName: MovementController, Assembly-CSharp
+        m_MethodName: ResumeMovement
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 2035487081}
+        m_TargetAssemblyTypeName: lives, Assembly-CSharp
+        m_MethodName: initialize
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 75301028}
+        m_TargetAssemblyTypeName: Invincibility, Assembly-CSharp
+        m_MethodName: initialize
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+  onDie:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 75301023}
+        m_TargetAssemblyTypeName: CharacterAnimationController, Assembly-CSharp
+        m_MethodName: Die
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 964455247}
+        m_TargetAssemblyTypeName: InputController, Assembly-CSharp
+        m_MethodName: set_IsActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 75301022}
+        m_TargetAssemblyTypeName: MovementController, Assembly-CSharp
+        m_MethodName: StopMovement
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1062164408}
+        m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
+        m_MethodName: Play
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: PlayerDIe
+          m_BoolArgument: 0
+        m_CallState: 2
+  onFall:
+    m_PersistentCalls:
+      m_Calls: []
+  onLoseLife:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 75301028}
+        m_TargetAssemblyTypeName: Invincibility, Assembly-CSharp
+        m_MethodName: ActivateGhost
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1062164408}
+        m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
+        m_MethodName: Play
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: HItPlayer
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!4 &36967737
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 36967735}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -18.81792, y: 9.83435, z: 3.95017}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &37955963
 GameObject:
   m_ObjectHideFlags: 0
@@ -185,8 +373,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ThrowEnemies
   player: {fileID: 75301019}
-  throwForce: 10
+  throwForce: 3
   throwTime: 5
+  onThrow:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1062164408}
+        m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
+        m_MethodName: Play
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: HitEnemy
+          m_BoolArgument: 0
+        m_CallState: 2
+  particleConfig:
+    particlesPrefab: {fileID: 54974203927413661, guid: 4e65d7c90c1d27d44a93135023da97ee, type: 3}
+    offsetParticlesY: 0.5
 --- !u!4 &37955965
 Transform:
   m_ObjectHideFlags: 0
@@ -247,6 +453,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 75301019}
+  - component: {fileID: 75301027}
   - component: {fileID: 75301020}
   - component: {fileID: 75301022}
   - component: {fileID: 75301021}
@@ -254,6 +461,7 @@ GameObject:
   - component: {fileID: 75301024}
   - component: {fileID: 75301025}
   - component: {fileID: 75301026}
+  - component: {fileID: 75301028}
   m_Layer: 0
   m_Name: Knight
   m_TagString: Untagged
@@ -275,7 +483,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 135744512}
-  - {fileID: 1292710150}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!143 &75301020
@@ -409,7 +616,7 @@ MonoBehaviour:
         m_CallState: 2
   rollDuration: 3
   cooldown: 1
-  rollCollider: {fileID: 1292710151}
+  rollCollider: {fileID: 75301027}
   rollEffectPrefab: {fileID: 1843419344114819697, guid: 839f40562a17f2a4f89f77f99371c2df, type: 3}
   effectOffsetY: 5
 --- !u!114 &75301025
@@ -453,7 +660,19 @@ MonoBehaviour:
         m_CallState: 2
   onEnemyHit:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 37955964}
+        m_TargetAssemblyTypeName: ThrowEnemies, Assembly-CSharp
+        m_MethodName: ThrowEnemy
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onPlayerLose:
     m_PersistentCalls:
       m_Calls:
@@ -483,6 +702,41 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Blink
   blinkInterval: 0.1
+--- !u!65 &75301027
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 75301017}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 11, y: 6.08, z: 11}
+  m_Center: {x: 0, y: 4, z: 0}
+--- !u!114 &75301028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 75301017}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb79ddaa1d26feb4db1508e9493fdc3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Invincibility
+  invincibilityDuration: 10
+  ghostDuration: 2
 --- !u!1 &86315457
 GameObject:
   m_ObjectHideFlags: 0
@@ -4723,59 +4977,6 @@ PrefabInstance:
       addedObject: {fileID: 1197805743}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1216af3d6d2a19b4e9b08fb588bfcf41, type: 3}
---- !u!1 &1292710149
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1292710150}
-  - component: {fileID: 1292710151}
-  m_Layer: 0
-  m_Name: Rollcollider
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1292710150
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1292710149}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 75301019}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1292710151
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1292710149}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 9, y: 7, z: 9}
-  m_Center: {x: 0, y: 5, z: 0}
 --- !u!4 &1310033433 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1049103947159509771, guid: 67290d853cc54dc46b1cb5fb88e0ea05, type: 3}
@@ -5943,29 +6144,17 @@ MonoBehaviour:
   onGameStart:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 964455247}
-        m_TargetAssemblyTypeName: InputController, Assembly-CSharp
-        m_MethodName: set_IsActive
-        m_Mode: 6
+      - m_Target: {fileID: 36967736}
+        m_TargetAssemblyTypeName: PlayerStates, Assembly-CSharp
+        m_MethodName: Initialize
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 75301023}
-        m_TargetAssemblyTypeName: CharacterAnimationController, Assembly-CSharp
-        m_MethodName: set_IsActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
+          m_BoolArgument: 0
         m_CallState: 2
 --- !u!4 &1729918778
 Transform:
@@ -7030,14 +7219,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a39db4f1f1689b4193ae5ced8bca5ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::lives
-  startingLives: 0
+  startingLives: 2
   onLoseLife:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 75301026}
-        m_TargetAssemblyTypeName: Blink, Assembly-CSharp
-        m_MethodName: StartBlink
-        m_Mode: 0
+      - m_Target: {fileID: 36967736}
+        m_TargetAssemblyTypeName: PlayerStates, Assembly-CSharp
+        m_MethodName: LoseLife
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -7049,20 +7238,8 @@ MonoBehaviour:
   onDeath:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 964455247}
-        m_TargetAssemblyTypeName: InputController, Assembly-CSharp
-        m_MethodName: set_IsActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 75301023}
-        m_TargetAssemblyTypeName: CharacterAnimationController, Assembly-CSharp
+      - m_Target: {fileID: 36967736}
+        m_TargetAssemblyTypeName: PlayerStates, Assembly-CSharp
         m_MethodName: Die
         m_Mode: 1
         m_Arguments:
@@ -7076,11 +7253,7 @@ MonoBehaviour:
   startInvincibility:
     m_PersistentCalls:
       m_Calls: []
-  endInvincibility:
-    m_PersistentCalls:
-      m_Calls: []
-  InvincibilityDuration: 2
-  fullInvincivilityDuration: 4
+  InvincibilityLimit: 3
 --- !u!4 &2035487082
 Transform:
   m_ObjectHideFlags: 0
@@ -7961,3 +8134,4 @@ SceneRoots:
   - {fileID: 319284078}
   - {fileID: 1692155488}
   - {fileID: 2035487082}
+  - {fileID: 36967737}

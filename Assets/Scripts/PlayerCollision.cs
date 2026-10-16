@@ -12,6 +12,11 @@ public class PlayerCollision : MonoBehaviour
     public UnityEvent onPlayerLose;
     [SerializeField]
     private RollController rollController;
+    private Invincibility invincibility;
+    private void Awake()
+    {
+        invincibility = GetComponent<Invincibility>();
+    }
     private void OnTriggerEnter(Collider other)
     {
         if(other.CompareTag("Coin"))
