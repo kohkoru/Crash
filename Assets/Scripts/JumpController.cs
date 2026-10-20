@@ -21,12 +21,15 @@ public class JumpController : MonoBehaviour
     {
         if (characterController.isGrounded)
         {
-            verticalVelocity = -2f;
-        }
-        if (InputController.Jump)
-        {
-            onJump?.Invoke();
-            verticalVelocity = JumpVelocity;
+            if (verticalVelocity > 0)
+            {
+                verticalVelocity = -2f;
+            }
+            if (InputController.Jump)
+            {
+                onJump?.Invoke();
+                verticalVelocity = JumpVelocity;
+            }
         }
         else
         {

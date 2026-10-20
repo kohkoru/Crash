@@ -5,26 +5,22 @@ using UnityEngine.SceneManagement;
 public class GameController : MonoBehaviour
 {
     [SerializeField]
-    private CoinsController coinsController;
-    [SerializeField]
-    private Transform Player;
-    [SerializeField]
-    private Transform startPosition;
+    private Transform player;
     [SerializeField]
     private UnityEvent onGameStart;
-    private void start()
+    [SerializeField]
+    private UnityEvent onGameRestart;
+    private void Start()
     {
         StartGame();
     }
 
     public void StartGame()
     {
-        coinsController.Initialize();
-        Player.position = startPosition.position;
         onGameStart?.Invoke();
     }
-    public void ResetLevel()
+    public void RestartGame()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        onGameRestart?.Invoke();
     }
 }
