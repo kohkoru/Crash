@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class Box : MonoBehaviour
@@ -6,27 +7,14 @@ public class Box : MonoBehaviour
     private GameObject rewardObject;
     [SerializeField]
     private GameObject breakParticles;
-    [SerializeField]
-    private Collider zoneCollider;
     public string breakSoundName;
-    public void CheckCharacter(Transform character)
-    {
-        if (IsCharacterOnTop(character))
-        {
-            Break();
-        }
-    }
+    [SerializeField]
+    private Vector3 rewardOffset;
     public void Break()
     {
-        PoolManager.Instance.GetObject(rewardObject, transform.position);
+        PoolManager.Instance.GetObject(rewardObject, transform.position + rewardOffset);
         PoolManager.Instance.GetObject(breakParticles, transform.position);
         SoundManager.instance.Play(breakSoundName);
         gameObject.SetActive(false);
-    }
-    private bool IsCharacterOnTop(Transform character)
-    {
-        Bounds zoneBounds = zoneCollider.bounds;
-        bool isAvobeTop = Mathf.Abs(character.position.y - zoneBounds.max.y) < 0.1f;
-        return isAvobeTop;
     }
 }

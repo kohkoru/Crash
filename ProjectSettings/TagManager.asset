@@ -7,7 +7,8 @@ TagManager:
   - Coin
   - Enemy
   - Box
-  - FxTemporaire
+  - CheckPoint
+  - Cliff
   layers:
   - Default
   - TransparentFX
