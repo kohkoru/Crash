@@ -247,6 +247,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 75301021}
+        m_TargetAssemblyTypeName: JumpController, Assembly-CSharp
+        m_MethodName: set_HasGravity
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   onDie:
     m_PersistentCalls:
       m_Calls:
@@ -324,7 +336,19 @@ MonoBehaviour:
         m_CallState: 2
   onFall:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 36967736}
+        m_TargetAssemblyTypeName: PlayerStates, Assembly-CSharp
+        m_MethodName: Die
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onLoseLife:
     m_PersistentCalls:
       m_Calls:
@@ -719,6 +743,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
         m_MethodName: Play
         m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: HitPlayer
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 36967736}
+        m_TargetAssemblyTypeName: PlayerStates, Assembly-CSharp
+        m_MethodName: Fall
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -3123,6 +3159,63 @@ Transform:
   m_Children: []
   m_Father: {fileID: 818487066}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &687604499
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 558ddff545134a341bb263bf124d6a11, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -20.076706
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 558ddff545134a341bb263bf124d6a11, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 6.864472
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 558ddff545134a341bb263bf124d6a11, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 11.00769
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 558ddff545134a341bb263bf124d6a11, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.78465617
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 558ddff545134a341bb263bf124d6a11, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.61952865
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 558ddff545134a341bb263bf124d6a11, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.017532183
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 558ddff545134a341bb263bf124d6a11, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.013842775
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 558ddff545134a341bb263bf124d6a11, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -76.586
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 558ddff545134a341bb263bf124d6a11, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 2.56
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 558ddff545134a341bb263bf124d6a11, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 558ddff545134a341bb263bf124d6a11, type: 3}
+      propertyPath: m_Name
+      value: Spamton_G_Spamton_FullExport
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 558ddff545134a341bb263bf124d6a11, type: 3}
 --- !u!1 &694094593
 GameObject:
   m_ObjectHideFlags: 0
@@ -3989,6 +4082,7 @@ MonoBehaviour:
   target: {fileID: 75301019}
   walkSmoothTime: 0.15
   jumpSmoothTime: 0.4
+  downLimit: 1
 --- !u!1 &833719793
 GameObject:
   m_ObjectHideFlags: 0
@@ -4085,7 +4179,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Menu
+          m_StringArgument: Lose
           m_BoolArgument: 0
         m_CallState: 2
   deathDelay: 1
@@ -4233,7 +4327,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7977199180309384278, guid: fdeb14b6b1d857a4e97752d1f07b49b7, type: 3}
       propertyPath: m_TagString
-      value: Enemy
+      value: Cliff
       objectReference: {fileID: 0}
     - target: {fileID: 7977199180309384278, guid: fdeb14b6b1d857a4e97752d1f07b49b7, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -4275,7 +4369,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 160, y: 5, z: 160}
-  m_Center: {x: 0, y: -1, z: 0}
+  m_Center: {x: 0, y: -3, z: 0}
 --- !u!4 &908092011 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5063792230117622152, guid: fdeb14b6b1d857a4e97752d1f07b49b7, type: 3}
@@ -6327,6 +6421,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fade
       objectReference: {fileID: 0}
+    - target: {fileID: 3103444831372309202, guid: 6ba2abf362896444eafe57dbcb9901a5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4220191107852453762, guid: 6ba2abf362896444eafe57dbcb9901a5, type: 3}
       propertyPath: m_Color.a
       value: 0
@@ -6759,6 +6857,30 @@ MonoBehaviour:
   onGameStart:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 576070549}
+        m_TargetAssemblyTypeName: CheckPointController, Assembly-CSharp
+        m_MethodName: MovePlayerToCheckPoint
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 468278677}
+        m_TargetAssemblyTypeName: Continues, Assembly-CSharp
+        m_MethodName: initialize
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 36967736}
         m_TargetAssemblyTypeName: PlayerStates, Assembly-CSharp
         m_MethodName: Initialize
@@ -6775,18 +6897,6 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: CoinsController, Assembly-CSharp
         m_MethodName: Initialize
         m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 576070549}
-        m_TargetAssemblyTypeName: CheckPointController, Assembly-CSharp
-        m_MethodName: MovePlayerToCheckPoint
-        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -7891,7 +8001,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a39db4f1f1689b4193ae5ced8bca5ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::lives
-  startingLives: 2
+  startingLives: 0
   onLoseLife:
     m_PersistentCalls:
       m_Calls:
@@ -9010,3 +9120,4 @@ SceneRoots:
   - {fileID: 1128631773}
   - {fileID: 713563009}
   - {fileID: 363548392}
+  - {fileID: 687604499}
