@@ -1,4 +1,6 @@
+using System;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Invincibility : MonoBehaviour
 {
@@ -8,6 +10,10 @@ public class Invincibility : MonoBehaviour
     private float ghostDuration;
     private bool isInvincible;
     private bool isGhost;
+    [SerializeField]
+    private UnityEvent onInvincibilityStart;
+    [SerializeField]
+    private UnityEvent onInvincibilityEnd;
     private bool IsInvincible => isInvincible;
     private bool IsGhost => isGhost;
     private Blink playerBlink;
@@ -34,5 +40,16 @@ public class Invincibility : MonoBehaviour
     public void EndGhost()
     {
         isGhost = false;
+    }
+    public void ActivateInvincibility()
+    {
+        isInvincible = true;
+        onInvincibilityStart?.Invoke();
+        Invoke(nameof(EndInvincibility),  invincibilityDuration);
+    }
+    public void EndInvincibility()
+    {
+        isInvincible = false;
+        onInvincibilityEnd?.Invoke();
     }
 }

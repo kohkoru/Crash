@@ -9,6 +9,7 @@ TagManager:
   - Box
   - CheckPoint
   - Cliff
+  - Mask
   layers:
   - Default
   - TransparentFX

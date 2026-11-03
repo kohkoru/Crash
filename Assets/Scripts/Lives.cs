@@ -13,11 +13,14 @@ public class lives : MonoBehaviour
     private UnityEvent startInvincibility;
     [SerializeField]
     private float InvincibilityLimit = 3;
+    [SerializeField]
+    private AvatarController avatarController;
     private int currentLives;
     private bool isDead => currentLives <= 0;
     public void initialize()
     {
         currentLives = startingLives;
+        avatarController.setActiveAvatar(currentLives); 
     }
     public void Addlife(int amount)
     {
@@ -28,6 +31,7 @@ public class lives : MonoBehaviour
         else
         {
             currentLives += amount;
+            avatarController.setActiveAvatar(currentLives);
         }
     }
     public void LoseLife()
@@ -40,11 +44,13 @@ public class lives : MonoBehaviour
         else
         {
             onLoseLife?.Invoke();
+            avatarController.setActiveAvatar(currentLives);
         }
     }
     public void Kill()
     {
         currentLives = 0;
-        onDeath?.Invoke(); 
+        onDeath?.Invoke();
+        avatarController.setActiveAvatar(currentLives);
     }
 }
