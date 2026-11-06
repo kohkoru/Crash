@@ -14,8 +14,8 @@ public class Invincibility : MonoBehaviour
     private UnityEvent onInvincibilityStart;
     [SerializeField]
     private UnityEvent onInvincibilityEnd;
-    private bool IsInvincible => isInvincible;
-    private bool IsGhost => isGhost;
+    public bool IsInvincible => isInvincible;
+    public bool IsGhost => isGhost;
     private Blink playerBlink;
     private void Awake()
     {

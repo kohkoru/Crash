@@ -4,13 +4,19 @@ using UnityEngine;
 public class AvatarController : MonoBehaviour
 {
     [SerializeField]
-    private GameObject[] avatars;
-    public void setActiveAvatar(int index)
+    private AvatarData[] avatars;
+    public void setActiveAvatar(int numberOfLives)
     {
-        index--;
         for (int i = 0; i < avatars.Length; i++)
         {
-            avatars[i].SetActive(i == index);
+            AvatarData avatarData = avatars[i];
+            avatarData.avatar.SetActive(avatarData.numberOfLives == numberOfLives);
         }
     }
+}
+[System.Serializable]
+public class AvatarData
+{
+    public int numberOfLives;
+    public GameObject avatar;
 }

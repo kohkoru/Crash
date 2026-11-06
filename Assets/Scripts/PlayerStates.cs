@@ -11,6 +11,8 @@ public class PlayerStates : MonoBehaviour
     [SerializeField]
     private UnityEvent onFall;
     [SerializeField]
+    private UnityEvent onWin;
+    [SerializeField]
     private UnityEvent onLoseLife;
 
     public void Initialize()
