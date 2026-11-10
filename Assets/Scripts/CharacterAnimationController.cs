@@ -25,6 +25,8 @@ public class CharacterAnimationController : MonoBehaviour
     {
         isActive = false;
         PlayAnimation(animationConfiguration.danceAnimationName);
+        Vector3 LookDirection = new Vector3(Camera.main.transform.position.x, transform.position.y, Camera.main.transform.position.z);
+        transform.LookAt(LookDirection);
     }
     public void Roll()
     {

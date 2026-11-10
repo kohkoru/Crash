@@ -31,4 +31,8 @@ public class PlayerStates : MonoBehaviour
     {
         onLoseLife?.Invoke();
     }
+    public void Win()
+    {
+        onWin?.Invoke();
+    }
 }

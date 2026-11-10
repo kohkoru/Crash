@@ -13,6 +13,7 @@ TagManager:
   - FxTemporaire
   - Continue
   - Win
+  - LevelGem
   layers:
   - Default
   - TransparentFX
