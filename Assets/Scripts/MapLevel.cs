@@ -10,7 +10,7 @@ public class MapLevel : MonoBehaviour
     private string levelName;
     public string LevelName => levelName;
     public MapLevelData NextLevel => nextLevel;
-    public MapLevelData PrevLevel => previousLevel;
+    public MapLevelData PreviousLevel => previousLevel;
 }
 [System.Serializable]
 public class MapLevelData

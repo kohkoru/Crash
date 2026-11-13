@@ -9,20 +9,24 @@ public class MapController : MonoBehaviour
     private UnityEvent<string> onLevelChosen;
     [SerializeField]
     private UnityEvent onMapStart;
+    private void Start()
+    {
+        onMapStart?.Invoke();
+    }
 
     public void MovePlayer(MapDirection direction)
     {
         if (mapPlayerController.CurrentLevel == null || !mapPlayerController.CanWalk) return;
-        CheckLevel(mapPlayerController.CurrentLevel.NextLevel.level, direction);
-        CheckLevel(mapPlayerController.CurrentLevel.PrevLevel.level, direction);
+        CheckLevel(mapPlayerController.CurrentLevel.NextLevel, direction);
+        CheckLevel(mapPlayerController.CurrentLevel.PreviousLevel, direction);
     }
 
-    private void CheckLevel(MapLevel level, MapDirection direction)
+    private void CheckLevel(MapLevelData level, MapDirection direction)
     {
         if (level == null) return;
-        if (level.NextLevel != null && level.NextLevel.direction == direction)
+        if (level.direction == direction)
         {
-            mapPlayerController.MoveToLevel(level.NextLevel.level);
+            mapPlayerController.MoveToLevel(level.level);
         }
     }
     public void ChooseLevel()

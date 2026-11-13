@@ -95,7 +95,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edd82fed89bc7b24b841bef2a0de50f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Box
-  rewardObject: {fileID: 0}
+  rewardObject: {fileID: 8205145356654768960, guid: 2dd0541dbf05b98499b6543197de169b, type: 3}
   breakParticles: {fileID: 4323937580833484844, guid: 54ab4149829e09946a8051919dead764, type: 3}
   breakSoundName: Box
   rewardOffset: {x: 0, y: 1, z: 0}
