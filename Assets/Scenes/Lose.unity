@@ -2164,7 +2164,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3efd70b2770b21044b384a124a70e805, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Continues
-  continuesText: {fileID: 0}
+  continuesText: {fileID: 934781717}
 --- !u!4 &2074388306
 Transform:
   m_ObjectHideFlags: 0
